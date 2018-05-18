@@ -69,26 +69,52 @@ const list_data = [
     }
 ];
 
-function buildList() {
-const mainlist = document.querySelector("#thelist")
-    // build a list of all the links in list_data
-   list_data.forEach(mainlist => {
-       console.log(mainlist);
-       
-   })
-    // create a <li>-element for each one, let it contain a link to the link, with the description as text
-    
-    // use the createLi function to create an li-element
-//    document.querySelector("#theList")
-    // append all the created <li>-elements to #thelist
-    
-}
-function createLi(){
-   const bla = document.createElement("li");
- console.log(bla)
 
-}
-append("li");
+//function buildList() {
+
+    // build a list of all the links in list_data
+    //const mainlist = document.querySelector('#thelist')
+
+    // create a <li>-element for each one, let it contain a link to the link, with the description as text
+    //list_data.forEach(mainlist => {
+      //  console.log(mainlist)
+        //return ("li");
+        //console.log("li")
+        
+    //});
+    // use the createLi function to create an li-element
+
+    // append all the created <li>-elements to #thelist
+
+//}
+
 // TODO: Make function createLi
-createLi()
-buildList()
+
+//function createLi (){
+   // const elementLi = document.createElement("LI");
+ //console.log(elementLi);
+ //return  elementLi;
+//}
+
+//buildList();
+//createLi();
+
+let link = [];
+const mainList = document.querySelector("#thelist");
+
+function buildList() {
+    list_data.forEach(function(e) {
+        let str = e.description;
+        let result = str.link(e.link);
+        createLi(e).innerHTML = result;
+    }
+)}
+
+// TODO: Make function createLi
+function createLi (item){
+    const elementLi = document.createElement("li");
+    mainList.appendChild(elementLi);
+    elementLi.innerText = link[item];
+    return elementLi;
+   
+}
